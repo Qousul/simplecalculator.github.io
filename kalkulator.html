@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <style>
+        p {
+            display: inline-block;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .wadah{
+            display: inline-block;
+            text-align: left;
+            padding: 40px;
+            border: 2px solid black;
+            border-radius: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br><br><br><br><br><br>
+    <div class="wadah">
+        <h1>KALKULATOR</h1>
+
+        <div class="bilangan">
+            <p>Bilangan Pertama : </p>
+            <input type="text" id="bilanganPertama">
+        </div>
+
+        <div class="bilanganKedua">
+            <p>Bilangan Kedua : </p>
+            <input type="text" id="bilanganKedua">
+        </div>
+
+        <div class="operatorCtn">
+            <p>Operator : </p>
+            <select id="operator">
+                <option value="penjumlahan">Penjumlahan</option>
+                <option value="pengurangan">Pengurangan</option>
+                <option value="perkalian">Perkalian</option>
+                <option value="pembagian">Pembagian</option>
+            </select>
+        </div>
+
+
+        <button onclick="hitung()">Hitung</button>
+
+
+        <div class="hasil">
+            <p>hasil : </p>
+            <span id="hasil"></span>
+        </div>
+    </div>
+
+    <script>
+        function hitung() {
+            let a = parseInt(document.getElementById("bilanganPertama").value);
+            let b = parseInt(document.getElementById("bilanganKedua").value);
+            let c = document.getElementById("operator").value;
+            let d;
+
+            if (c === "penjumlahan") {
+                d = a + b;
+            }
+            else if (c === "pengurangan") {
+                d = a - b;
+            }
+            else if (c === "perkalian") {
+                d = a * b;
+            }
+            else {
+                d = a / b;
+            }
+
+            document.getElementById("hasil").innerHTML = d;
+            console.log(d);
+        }
+    </script>
+</body>
+
+</html>
